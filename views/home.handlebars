@@ -1,0 +1,12 @@
+{{#extend "main"}}
+{{#content "body"}}
+<h1>Welcome to our Blog Site!</h1>
+{{#each posts}}
+    <div class="post">
+        <h2><a href="/posts/{{this.id}}">{{this.title}}</a></h2>
+        <p>{{this.content}}</p>
+        <small>Posted by {{this.username}} on {{this.createdAt}}</small>
+    </div>
+{{/each}}
+{{/content}}
+{{/extend}}

@@ -1,0 +1,19 @@
+{{#extend "main"}}
+{{#content "body"}}
+<h1>Dashboard</h1>
+{{#if userPosts}}
+    {{#each userPosts}}
+        <div class="post">
+            <h2><a href="/posts/{{this.id}}">{{this.title}}</a></h2>
+            <small>Posted on {{this.createdAt}}</small>
+            <p>{{this.content}}</p>
+            <button><a href="/posts/{{this.id}}/edit">Edit</a></button>
+            <button><a href="/posts/{{this.id}}/delete">Delete</a></button>
+        </div>
+    {{/each}}
+{{else}}
+    <p>You have not posted any blogs yet.</p>
+{{/if}}
+<button><a href="/posts/new">Create New Post</a></button>
+{{/content}}
+{{/extend}}
